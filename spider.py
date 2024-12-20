@@ -27,6 +27,7 @@ class BaseSpider:
         self.on_request(request)
         response = request.do()
         new_response = self.on_response(response)
+        new_response.request = request
         return new_response
 
 
